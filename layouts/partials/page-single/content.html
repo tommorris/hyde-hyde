@@ -1,8 +1,8 @@
-<article>
+<article class="h-entry" vocab="http://schema.org/" typeof="BlogPosting" resource="{{ .RelPermalink }}">
   <header>
-    <h1>{{ .Title }}</h1>
+    <h1 property="name" class="p-name">{{ .Title }}</h1>
     {{ with .Params.subtitle }}
-    <span class="post__subtitle">
+    <span class="post__subtitle p-summary" property="description">
       {{.}}
     </span>
     {{ end }}
@@ -20,7 +20,7 @@
     {{ end }}
   </div>
   {{ end }}
-  <div class="post">
+  <div class="post e-content" property="articleBody">
     {{ .Content }}
   </div>
   {{ partial "page-single/post-navigation.html" . }}
